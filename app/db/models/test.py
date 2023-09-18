@@ -1,4 +1,3 @@
-from typing import Any
 from sqlalchemy import Column, String
 from app.db.models.base import Base
 
