@@ -4,7 +4,7 @@ from app.db.database import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.schemas.test import TestCreateSchema, TestUpdateSchema
 from app.db.models.test import Test
-from app.services.test import get_test_service, create_test_service, update_test_service
+from app.services.test import get_test_service, create_test_service, update_test_service, return_host_ip
 
 
 router = APIRouter()

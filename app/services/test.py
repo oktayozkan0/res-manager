@@ -23,12 +23,11 @@ async def update_test_service(db: AsyncSession, payload: TestUpdateSchema):
     instance = result.scalars().first()
 
     if not instance:
-        return HTTPException(
+        raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Not found"
         )
 
     update_stmt = update(Test).where(Test.id == payload.id).values(test_col=payload.new_col)
-    res = await db.execute(update_stmt)
-    await db.commit()
-    return res
+    await db.execute(update_stmt)
+    return await db.commit()
