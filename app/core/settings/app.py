@@ -10,7 +10,7 @@ from app.core.settings.base import BaseAppSettings
 
 
 class AppSettings(BaseAppSettings):
-    debug: bool = False
+    debug: bool
     docs_url: str = "/docs"
     openapi_prefix: str = ""
     openapi_url: str = "/openapi.json"
@@ -18,9 +18,9 @@ class AppSettings(BaseAppSettings):
     title: str = "FastAPI example application"
     version: str = "0.0.0"
 
-    database_url: PostgresDsn = "postgresql+asyncpg://postgres:postgres@localhost/test"
+    database_url: PostgresDsn
 
-    secret_key: SecretStr = "TEST"
+    secret_key: SecretStr
 
     api_prefix: str = "/api"
 
